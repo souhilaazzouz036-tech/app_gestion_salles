@@ -28,3 +28,15 @@ def insert_salle(self, salle):
 
     cursor.close()
     connection.close()
+    def update_salle(self, salle):
+        connection = self.get_connection()
+        cursor = connection.cursor()
+
+        req = "UPDATE salle SET libelle=%s, type=%s, capacite=%s WHERE code=%s"
+        valeurs = (salle.libelle, salle.type, salle.capacite, salle.code)
+
+        cursor.execute(req, valeurs)
+        connection.commit()
+
+        cursor.close()
+        connection.close()

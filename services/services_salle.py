@@ -17,3 +17,11 @@ def ajouter_salle(self, salle):
         return True, "Salle ajoutée avec succès"
     except Exception as e:
         return False, str(e)
+
+
+def supprimer_salle(self, code):
+    try:
+        self.dao_salle.delete_salle(code)
+        return True, "Salle supprimée avec succès"
+    except Exception as e:
+        return False, str(e)

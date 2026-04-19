@@ -36,3 +36,4 @@ def supprimer_salle(self, code):
         except Exception as e:
             print("Erreur recherche :", e)
             return None
+

@@ -1,4 +1,6 @@
 from Data.dao_salle import DataSalle
+from models.salle import Salle
+
 
 
 class ServiceSalle:
@@ -25,3 +27,12 @@ def supprimer_salle(self, code):
         return True, "Salle supprimée avec succès"
     except Exception as e:
         return False, str(e)
+ def rechercher_salle(self, code):
+        try:
+            resultat = self.dao_salle.get_salle(code)
+            if resultat:
+                return Salle(resultat[0], resultat[1], resultat[2], resultat[3])
+            return None
+        except Exception as e:
+            print("Erreur recherche :", e)
+            return None

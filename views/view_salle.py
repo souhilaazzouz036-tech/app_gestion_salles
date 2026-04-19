@@ -36,6 +36,8 @@ class ViewSalle(ctk.CTk):
         self.cadreActions.pack(pady=10, padx=10, fill="x")
         self.btn_ajouter = ctk.CTkButton(self.cadreActions, text="Ajouter")
         self.btn_ajouter.grid(row=0, column=0, padx=10, pady=10)
+        self.btn_modifier = ctk.CTkButton(self.cadreActions, text="Modifier")
+        self.btn_modifier.grid(row=0, column=1, padx=10, pady=10)
 
 
 

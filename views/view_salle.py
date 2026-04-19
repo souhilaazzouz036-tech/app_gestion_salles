@@ -49,6 +49,17 @@ class ViewSalle(ctk.CTk):
         self.btn_supprimer.configure(command=self.supprimer_salle)
         self.btn_rechercher.configure(command=self.rechercher_salle)
 
+    def ajouter_salle(self):
+        salle = Salle(
+            self.entry_code.get(),
+            self.entry_libelle.get(),
+            self.entry_type.get(),
+            self.entry_capacite.get()
+        )
+        succes, message = self.service_salle.ajouter_salle(salle)
+        messagebox.showinfo("Ajout", message)
+        if succes:
+            self.lister_salles()
 
 
 

@@ -100,9 +100,9 @@ class ViewSalle(ctk.CTk):
             self.cadreList = ctk.CTkFrame(self, corner_radius=10, width=400)
             self.cadreList.pack(pady=10, padx=10, fill="both", expand=True)
             self.treeList = ttk.Treeview(
-                self.cadreList,
-                columns=("code", "libelle", "type", "capacite"),
-                show="headings"
+            self.cadreList,
+            columns=("code", "libelle", "type", "capacite"),
+            show="headings"
             )
             self.treeList.heading("code", text="CODE")
             self.treeList.heading("libelle", text="LIBELLÉ")

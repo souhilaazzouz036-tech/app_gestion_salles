@@ -61,6 +61,18 @@ class ViewSalle(ctk.CTk):
         if succes:
             self.lister_salles()
 
+    def modifier_salle(self):
+        salle = Salle(
+            self.entry_code.get(),
+            self.entry_libelle.get(),
+            self.entry_type.get(),
+            self.entry_capacite.get()
+        )
+        succes, message = self.service_salle.modifier_salle(salle)
+        messagebox.showinfo("Modification", message)
+        if succes:
+            self.lister_salles()
+
 
 
 

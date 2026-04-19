@@ -25,5 +25,12 @@ try:
     print("Salle trouvée :", salle)
 except Exception as e:
     print("Erreur recherche :", e)
+try:
+    salles = dao.get_salles()
+    print("Liste des salles :")
+    for s in salles:
+        print(s)
+except Exception as e:
+    print("Erreur liste :", e)
 
 

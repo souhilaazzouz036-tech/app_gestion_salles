@@ -11,3 +11,9 @@ def ajouter_salle(self, salle):
         return False, "Tous les champs sont obligatoires"
     if  int(salle.capacite) < 1:
         return False, "La capacité doit être supérieure ou égale à 1"
+
+    try:
+        self.dao_salle.insert_salle(salle)
+        return True, "Salle ajoutée avec succès"
+    except Exception as e:
+        return False, str(e)

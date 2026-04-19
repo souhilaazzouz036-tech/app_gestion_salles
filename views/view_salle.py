@@ -28,7 +28,10 @@ class ViewSalle(ctk.CTk):
         self.label_type.grid(row=2, column=0, padx=10, pady=10)
         self.entry_type = ctk.CTkEntry(self.cadreInfo)
         self.entry_type.grid(row=2, column=1, padx=10, pady=10)
-
+        self.label_capacite = ctk.CTkLabel(self.cadreInfo, text="Capacite :")
+        self.label_capacite.grid(row=3, column=0, padx=10, pady=10)
+        self.entry_capacite = ctk.CTkEntry(self.cadreInfo)
+        self.entry_capacite.grid(row=3, column=1, padx=10, pady=10)
 
 
 

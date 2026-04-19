@@ -14,4 +14,10 @@ try:
     print("Salle ajoutée avec succès")
 except Exception as e:
     print("Erreur ajout :", e)
+s1_modifie = Salle("A101", "Salle Informatique", "Laboratoire", 35)
+try:
+    dao.update_salle(s1_modifie)
+    print("Salle modifiée avec succès")
+except Exception as e:
+    print("Erreur modification :", e)
 

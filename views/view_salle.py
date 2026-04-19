@@ -97,8 +97,8 @@ class ViewSalle(ctk.CTk):
         else:
             messagebox.showerror("Recherche", "Salle introuvable")
 
-
-
+            self.cadreList = ctk.CTkFrame(self, corner_radius=10, width=400)
+            self.cadreList.pack(pady=10, padx=10, fill="both", expand=True)
 
 
 

@@ -20,4 +20,10 @@ try:
     print("Salle modifiée avec succès")
 except Exception as e:
     print("Erreur modification :", e)
+try:
+    salle = dao.get_salle("A101")
+    print("Salle trouvée :", salle)
+except Exception as e:
+    print("Erreur recherche :", e)
+
 

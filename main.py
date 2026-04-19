@@ -32,5 +32,9 @@ try:
         print(s)
 except Exception as e:
     print("Erreur liste :", e)
-
+try:
+    dao.delete_salle("A101")
+    print("Salle supprimée avec succès")
+except Exception as e:
+    print("Erreur suppression :", e)
 

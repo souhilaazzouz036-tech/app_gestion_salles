@@ -52,3 +52,16 @@ def delete_salle(self, code):
 
     cursor.close()
     connection.close()
+
+    def get_salle(self, code):
+        connection = self.get_connection()
+        cursor = connection.cursor()
+
+        req = "SELECT * FROM salle WHERE code=%s"
+        cursor.execute(req, (code,))
+        resultat = cursor.fetchone()
+
+        cursor.close()
+        connection.close()
+
+        return resultat

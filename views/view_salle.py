@@ -2,6 +2,7 @@ import customtkinter as ctk
 from services.services_salle import ServiceSalle
 from tkinter import messagebox
 from models.salle import Salle
+from tkinter import ttk
 
 ctk.set_appearance_mode("light")
 ctk.set_default_color_theme("blue")
@@ -95,6 +96,7 @@ class ViewSalle(ctk.CTk):
             self.entry_capacite.insert(0, salle.capacite)
         else:
             messagebox.showerror("Recherche", "Salle introuvable")
+
 
 
 

@@ -40,3 +40,15 @@ def insert_salle(self, salle):
 
         cursor.close()
         connection.close()
+
+
+def delete_salle(self, code):
+    connection = self.get_connection()
+    cursor = connection.cursor()
+
+    req = "DELETE FROM salle WHERE code=%s"
+    cursor.execute(req, (code,))
+    connection.commit()
+
+    cursor.close()
+    connection.close()

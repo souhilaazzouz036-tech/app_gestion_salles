@@ -47,6 +47,8 @@ class ViewSalle(ctk.CTk):
         self.btn_ajouter.configure(command=self.ajouter_salle)
         self.btn_modifier.configure(command=self.modifier_salle)
         self.btn_supprimer.configure(command=self.supprimer_salle)
+        self.btn_rechercher.configure(command=self.rechercher_salle)
+
 
 
 

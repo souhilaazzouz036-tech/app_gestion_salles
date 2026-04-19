@@ -9,3 +9,5 @@ class ServiceSalle:
 def ajouter_salle(self, salle):
     if not salle.code or not salle.libelle or not salle.type or not salle.capacite:
         return False, "Tous les champs sont obligatoires"
+    if  int(salle.capacite) < 1:
+        return False, "La capacité doit être supérieure ou égale à 1"

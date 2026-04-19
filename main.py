@@ -8,4 +8,10 @@ try:
     conn.close()
 except Exception as e:
     print("Erreur de connexion :", e)
+s1 = Salle("A101", "Salle A101", "Classe", 30)
+try:
+    dao.insert_salle(s1)
+    print("Salle ajoutée avec succès")
+except Exception as e:
+    print("Erreur ajout :", e)
 

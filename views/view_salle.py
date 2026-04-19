@@ -121,7 +121,7 @@ class ViewSalle(ctk.CTk):
         for s in liste:
             self.treeList.insert("", "end", values=(s.code, s.libelle, s.type, s.capacite))
 
-
+            self.lister_salles()
 
 
 

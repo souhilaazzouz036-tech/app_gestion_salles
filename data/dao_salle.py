@@ -65,3 +65,17 @@ def delete_salle(self, code):
         connection.close()
 
         return resultat
+
+
+def get_salles(self):
+    connection = self.get_connection()
+    cursor = connection.cursor()
+
+    req = "SELECT * FROM salle"
+    cursor.execute(req)
+    resultats = cursor.fetchall()
+
+    cursor.close()
+    connection.close()
+
+    return resultats

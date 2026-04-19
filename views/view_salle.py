@@ -113,6 +113,8 @@ class ViewSalle(ctk.CTk):
             self.treeList.column("libelle", width=150)
             self.treeList.column("type", width=120)
             self.treeList.column("capacite", width=100)
+            self.treeList.pack(expand=True, fill="both", padx=10, pady=10)
+
 
 
 

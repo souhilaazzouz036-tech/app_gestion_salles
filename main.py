@@ -1,40 +1,4 @@
-from Data.dao_salle import DataSalle
-from models.salle import Salle
+from views.view_salle import ViewSalle
 
-dao = DataSalle()
-try:
-    conn = dao.get_connection()
-    print("Connexion réussie à la base de données")
-    conn.close()
-except Exception as e:
-    print("Erreur de connexion :", e)
-s1 = Salle("A101", "Salle A101", "Classe", 30)
-try:
-    dao.insert_salle(s1)
-    print("Salle ajoutée avec succès")
-except Exception as e:
-    print("Erreur ajout :", e)
-s1_modifie = Salle("A101", "Salle Informatique", "Laboratoire", 35)
-try:
-    dao.update_salle(s1_modifie)
-    print("Salle modifiée avec succès")
-except Exception as e:
-    print("Erreur modification :", e)
-try:
-    salle = dao.get_salle("A101")
-    print("Salle trouvée :", salle)
-except Exception as e:
-    print("Erreur recherche :", e)
-try:
-    salles = dao.get_salles()
-    print("Liste des salles :")
-    for s in salles:
-        print(s)
-except Exception as e:
-    print("Erreur liste :", e)
-try:
-    dao.delete_salle("A101")
-    print("Salle supprimée avec succès")
-except Exception as e:
-    print("Erreur suppression :", e)
-
+app = ViewSalle()
+app.mainloop()

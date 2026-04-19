@@ -73,6 +73,13 @@ class ViewSalle(ctk.CTk):
         if succes:
             self.lister_salles()
 
+    def supprimer_salle(self):
+        code = self.entry_code.get()
+        succes, message = self.service_salle.supprimer_salle(code)
+        messagebox.showinfo("Suppression", message)
+        if succes:
+            self.lister_salles()
+
 
 
 

@@ -15,6 +15,15 @@ class ViewSalle(ctk.CTk):
         self.service_salle = ServiceSalle()
         self.cadreInfo = ctk.CTkFrame(self, corner_radius=10)
         self.cadreInfo.pack(pady=10, padx=10, fill="x")
+        self.label_code = ctk.CTkLabel(self.cadreInfo, text="Code :")
+        self.label_code.grid(row=0, column=0, padx=10, pady=10)
+        self.entry_code = ctk.CTkEntry(self.cadreInfo)
+        self.entry_code.grid(row=0, column=1, padx=10, pady=10)
+
+        self.label_libelle = ctk.CTkLabel(self.cadreInfo, text="Libellé :")
+        self.label_libelle.grid(row=1, column=0, padx=10, pady=10)
+        self.entry_libelle = ctk.CTkEntry(self.cadreInfo)
+        self.entry_libelle.grid(row=1, column=1, padx=10, pady=10)
 
 
 

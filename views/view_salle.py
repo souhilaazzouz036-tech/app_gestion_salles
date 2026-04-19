@@ -38,6 +38,8 @@ class ViewSalle(ctk.CTk):
         self.btn_ajouter.grid(row=0, column=0, padx=10, pady=10)
         self.btn_modifier = ctk.CTkButton(self.cadreActions, text="Modifier")
         self.btn_modifier.grid(row=0, column=1, padx=10, pady=10)
+        self.btn_supprimer = ctk.CTkButton(self.cadreActions, text="Supprimer")
+        self.btn_supprimer.grid(row=0, column=2, padx=10, pady=10)
 
 
 

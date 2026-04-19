@@ -24,6 +24,11 @@ class ViewSalle(ctk.CTk):
         self.label_libelle.grid(row=1, column=0, padx=10, pady=10)
         self.entry_libelle = ctk.CTkEntry(self.cadreInfo)
         self.entry_libelle.grid(row=1, column=1, padx=10, pady=10)
+        self.label_type = ctk.CTkLabel(self.cadreInfo, text="Type :")
+        self.label_type.grid(row=2, column=0, padx=10, pady=10)
+        self.entry_type = ctk.CTkEntry(self.cadreInfo)
+        self.entry_type.grid(row=2, column=1, padx=10, pady=10)
+
 
 
 

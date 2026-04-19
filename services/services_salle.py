@@ -27,19 +27,26 @@ def supprimer_salle(self, code):
         return True, "Salle supprimée avec succès"
     except Exception as e:
         return False, str(e)
- def rechercher_salle(self, code):
-        try:
-            resultat = self.dao_salle.get_salle(code)
-            if resultat:
-                return Salle(resultat[0], resultat[1], resultat[2], resultat[3])
-            return None
-        except Exception as e:
-            print("Erreur recherche :", e)
-            return None
+
+
+def rechercher_salle(self, code):
+    try:
+        resultat = self.dao_salle.get_salle(code)
+        if resultat:
+            return Salle(resultat[0], resultat[1], resultat[2], resultat[3])
+        return None
+    except Exception as e:
+        print("Erreur recherche :", e)
+        return None
+
+
 def recuperer_salles(self):
     liste_objets = []
     try:
         resultats = self.dao_salle.get_salles()
+        for r in resultats:
+            liste_objets.append(Salle(r[0], r[1], r[2], r[3]))
     except Exception as e:
         print("Erreur récupération :", e)
     return liste_objets
+

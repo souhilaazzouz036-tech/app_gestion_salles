@@ -1,5 +1,7 @@
 import customtkinter as ctk
 from services.services_salle import ServiceSalle
+from tkinter import messagebox
+from models.salle import Salle
 
 ctk.set_appearance_mode("light")
 ctk.set_default_color_theme("blue")
@@ -42,6 +44,7 @@ class ViewSalle(ctk.CTk):
         self.btn_supprimer.grid(row=0, column=2, padx=10, pady=10)
         self.btn_rechercher = ctk.CTkButton(self.cadreActions, text="Rechercher")
         self.btn_rechercher.grid(row=0, column=3, padx=10, pady=10)
+        self.btn_ajouter.configure(command=self.ajouter_salle)
 
 
 

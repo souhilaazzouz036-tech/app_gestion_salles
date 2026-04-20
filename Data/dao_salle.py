@@ -15,19 +15,19 @@ class DataSalle:
         )
         return connection
 
+    def insert_salle(self, salle):
+        connection = self.get_connection()
+        cursor = connection.cursor()
 
-def insert_salle(self, salle):
-    connection = self.get_connection()
-    cursor = connection.cursor()
+        req = "INSERT INTO salle (code, libelle, type, capacite) VALUES (%s, %s, %s, %s)"
+        valeurs = (salle.code, salle.libelle, salle.type, salle.capacite)
 
-    req = "INSERT INTO salle (code, libelle, type, capacite) VALUES (%s, %s, %s, %s)"
-    valeurs = (salle.code, salle.libelle, salle.type, salle.capacite)
+        cursor.execute(req, valeurs)
+        connection.commit()
 
-    cursor.execute(req, valeurs)
-    connection.commit()
+        cursor.close()
+        connection.close()
 
-    cursor.close()
-    connection.close()
     def update_salle(self, salle):
         connection = self.get_connection()
         cursor = connection.cursor()
@@ -41,17 +41,16 @@ def insert_salle(self, salle):
         cursor.close()
         connection.close()
 
+    def delete_salle(self, code):
+        connection = self.get_connection()
+        cursor = connection.cursor()
 
-def delete_salle(self, code):
-    connection = self.get_connection()
-    cursor = connection.cursor()
+        req = "DELETE FROM salle WHERE code=%s"
+        cursor.execute(req, (code,))
+        connection.commit()
 
-    req = "DELETE FROM salle WHERE code=%s"
-    cursor.execute(req, (code,))
-    connection.commit()
-
-    cursor.close()
-    connection.close()
+        cursor.close()
+        connection.close()
 
     def get_salle(self, code):
         connection = self.get_connection()
@@ -66,16 +65,15 @@ def delete_salle(self, code):
 
         return resultat
 
+    def get_salles(self):
+        connection = self.get_connection()
+        cursor = connection.cursor()
 
-def get_salles(self):
-    connection = self.get_connection()
-    cursor = connection.cursor()
+        req = "SELECT * FROM salle"
+        cursor.execute(req)
+        resultats = cursor.fetchall()
 
-    req = "SELECT * FROM salle"
-    cursor.execute(req)
-    resultats = cursor.fetchall()
+        cursor.close()
+        connection.close()
 
-    cursor.close()
-    connection.close()
-
-    return resultats
+        return resultats
